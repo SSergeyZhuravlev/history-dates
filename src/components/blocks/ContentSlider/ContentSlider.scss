@@ -35,15 +35,6 @@ $button-shadow-color: rgba(56, 119, 238, 0.1);
     align-items: flex-start;
     padding-left: 20px;
     width: 100%;
-    max-width: 400px;
-
-    @media (max-width: 1440px) {
-      max-width: 350px;
-    }
-
-    @media (max-width: 1024px) {
-      max-width: 300px;
-    }
 
     @media (max-width: 540px) {
       padding-left: 11px;
