@@ -1,0 +1,49 @@
+$primary-color: rgba(66, 86, 122, 0.1);
+$line-gradient-start: rgb(56, 119, 238);
+$line-gradient-end: rgb(239, 93, 168);
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .App {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    // padding: 0 320px;
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background-color: $primary-color;
+
+      @media (max-width: 1024px) {
+        width: 0;
+        height: 0;
+      }
+    }
+
+    &::before {
+      left: 9%;
+
+      @media (max-width: 1280px) {
+        left: 5%;
+      }
+    }
+
+    &::after {
+      right: 5%;
+    }
+  }
+}

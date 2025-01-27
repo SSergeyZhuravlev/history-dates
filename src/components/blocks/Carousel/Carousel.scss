@@ -1,0 +1,137 @@
+$primary-color: rgba(66, 86, 122, 0.1);
+$line-gradient-start: rgb(56, 119, 238);
+$line-gradient-end: rgb(239, 93, 168);
+
+.carousel-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 140px 320px 0 320px;
+
+  @media (max-width: 1920px) {
+    padding: 140px 220px 0 220px;
+  }
+
+  @media (max-width: 1600px) {
+    padding: 140px 180px 0 180px;
+  }
+
+  @media (max-width: 1280px) {
+    padding: 140px 100px 0 100px;
+  }
+
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+    height: 100vh;
+    padding: 15px 50px 0 50px;
+  }
+
+  @media (max-width: 540px) {
+    padding: 15px 27px 0 20px;
+  }
+
+  &__title {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 13%;
+      left: 9%;
+      width: 3px;
+      height: 130px;
+      z-index: 1001;
+      background: linear-gradient(
+        to bottom,
+        $line-gradient-start,
+        $line-gradient-end
+      );
+
+      @media (max-width: 1280px) {
+        left: 5%;
+      }
+
+      @media (max-width: 1024px) {
+        width: 0;
+        height: 0;
+      }
+    }
+
+    @media (max-width: 1440px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 540px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $primary-color;
+  }
+
+  &::before {
+    top: 0%;
+    left: 47.5%;
+    width: 1px;
+    height: 100%;
+
+    @media (max-width: 1024px) {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &::after {
+    top: 40.4%;
+    left: 9%;
+    width: 86%;
+    height: 1px;
+
+    @media (max-width: 1440px) {
+      top: 38.5%;
+    }
+
+    @media (max-width: 1280px) {
+      left: 5%;
+      width: 90%;
+    }
+
+    @media (max-width: 1024px) {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.carousel {
+  width: 530px;
+  height: 530px;
+  transform: translate(30%, 30%);
+  margin: 0;
+}
+
+.circle {
+  position: absolute;
+  top: -47%;
+  left: -39.5%;
+  width: 530px;
+  height: 530px;
+  border-radius: 50%;
+  border: 1px solid rgb(66, 86, 122);
+  opacity: 0.2;
+}
